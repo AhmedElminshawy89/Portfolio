@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -571,4 +571,455 @@
     </footer>
     <script src="script.js"></script>
   </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Elminshawy | Portfolio 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg: #030014;
+            --glass: rgba(15, 23, 42, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-gray: #94a3b8;
+        }
+
+        /* --- Global Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.2s ease-in-out; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { background: var(--bg); color: white; font-family: 'Space Grotesk', 'Cairo', sans-serif; overflow-x: hidden; }
+        
+        #canvas-container { position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; opacity: 0.8; } /* Increased opacity for better visibility of the new effect */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- Navigation --- */
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); padding: 15px 0; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-gray); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; }
+        .nav-links a:hover { color: white; text-shadow: 0 0 10px var(--primary); }
+        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+
+        /* --- Hero Section --- */
+        .hero { height: 100vh; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px; position: relative; }
+        .hero-text h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; font-weight: 700; letter-spacing: -2px; }
+        .gradient { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .hero-image-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
+        .hero-img-circle {
+            width: clamp(250px, 30vw, 380px);
+            height: clamp(250px, 30vw, 380px);
+            border-radius: 50%;
+            background: url('https://portfolio-beta-gold-77.vercel.app/assets/me.jpg') center/cover no-repeat;
+            border: 8px solid rgba(255,255,255,0.03);
+            box-shadow: 0 0 60px -10px var(--primary), inset 0 0 20px rgba(0,0,0,0.5);
+            position: relative; z-index: 2;
+        }
+        .hero-image-wrapper::after {
+            content: ''; position: absolute; width: 110%; height: 110%;
+            border-radius: 50%; background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            filter: blur(40px); opacity: 0.3; z-index: 1;
+        }
+
+        /* --- Section Styling --- */
+        section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+        .section-title { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 60px; display: flex; align-items: center; gap: 20px; font-weight: 700; letter-spacing: -1px; }
+        .section-title::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, var(--border), transparent); }
+
+        /* --- About Section --- */
+        .about-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        
+        .profile-blob {
+            width: 260px; height: 360px;
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: blobAnimate 8s infinite alternate;
+            overflow: hidden; border: 5px solid rgba(255,255,255,0.05);
+            position: relative; z-index: 2; filter: grayscale(30%);
+        }
+        .profile-blob img { width: 100%; height: 100%; object-fit: cover; }
+
+        @keyframes blobAnimate {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+        }
+
+        .stat-badge {
+            position: absolute; background: rgba(10, 10, 20, 0.8);
+            padding: 12px 18px; border-radius: 16px;
+            border: 1px solid var(--border); backdrop-filter: blur(10px);
+            display: flex; flex-direction: column; align-items: center;
+            z-index: 3; animation: float 4s infinite ease-in-out;
+        }
+        .stat-badge b { font-size: 1.4rem; color: #fff; }
+        .stat-badge span { font-size: 0.65rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+        .badge-1 { top: -10px; right: 10px; animation-delay: 0s; }
+        .badge-2 { bottom: 30px; left: -30px; animation-delay: 1s; }
+        .badge-3 { bottom: -10px; right: 0px; animation-delay: 2s; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        /* --- NEW Skills Grid Styling (MODERN) --- */
+        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .skill-group { 
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            padding: 30px; border-radius: 24px; border: 1px solid var(--border); 
+            position: relative;
+        }
+        .skill-group h3 { color: white; margin-bottom: 25px; font-size: 1.3rem; font-weight: 600; display: flex; align-items: center; gap: 12px; }
+        .skill-group h3 i { color: var(--primary); font-size: 1.1rem; }
+        
+        .skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-card { 
+            background: rgba(255, 255, 255, 0.03); padding: 8px 16px; border-radius: 50px; 
+            border: 1px solid var(--border); display: flex; align-items: center; gap: 8px; 
+            cursor: default;
+        }
+        .skill-card:hover { 
+            background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.4); 
+            transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .skill-card i { font-size: 1.1rem; color: var(--text-gray); } /* Default Icon Color */
+        .skill-card span { font-size: 0.85rem; font-weight: 500; color: #e2e8f0; }
+        
+        /* Custom styles for colored devicons on hover */
+        .skill-card:hover i { color: white; }
+        .skill-card:hover i.devicon-html5-plain { color: #E34F26; }
+        .skill-card:hover i.devicon-css3-plain { color: #1572B6; }
+        .skill-card:hover i.devicon-javascript-plain { color: #F7DF1E; }
+        .skill-card:hover i.devicon-typescript-plain { color: #3178C6; }
+        .skill-card:hover i.devicon-react-original { color: #61DAFB; }
+        .skill-card:hover i.devicon-nextjs-original { color: white; }
+        .skill-card:hover i.devicon-tailwindcss-original { color: #06B6D4; }
+        .skill-card:hover i.devicon-bootstrap-plain { color: #7952B3; }
+        .skill-card:hover i.devicon-git-plain { color: #F05032; }
+        .skill-card:hover i.devicon-nodejs-plain { color: #339933; }
+        .skill-card:hover i.devicon-figma-plain { color: #F24E1E; }
+        .skill-card:hover i.devicon-redux-original { color: #764ABC; }
+
+        /* Shadcn specialized style */
+        .skill-card.shadcn:hover { background: #fff; border-color: #fff; }
+        .skill-card.shadcn:hover span, .skill-card.shadcn:hover i { color: #000; }
+
+        /* --- Projects Grid --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; }
+        .project-card { position: relative; border-radius: 24px; background: #08081a; border: 1px solid var(--border); overflow: hidden; }
+        .project-img { height: 260px; margin: 10px; border-radius: 18px; overflow: hidden; position: relative; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; }
+        .project-card:hover .project-img img { transform: scale(1.05); }
+        .project-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent 40%, rgba(3, 0, 20, 0.98)); }
+        .project-info { padding: 0 25px 25px 25px; margin-top: -60px; position: relative; z-index: 2; }
+        .tag { font-size: 0.65rem; background: rgba(99, 102, 241, 0.15); color: #c7d2fe; padding: 4px 10px; border-radius: 50px; margin-right: 5px; border: 1px solid rgba(99, 102, 241, 0.3); }
+        .project-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 15px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .project-link:hover { gap: 10px; color: #818cf8; }
+
+        /* --- Mobile Optimization --- */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; text-align: center; height: auto; padding-top: 140px; padding-bottom: 60px; gap: 50px; }
+            .hero-image-wrapper { order: -1; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .about-wrapper { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .about-visual { order: -1; }
+        }
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .section-title { font-size: 1.8rem; }
+            .skill-group { padding: 20px; }
+        }
+
+        /* RTL Styles */
+        body.rtl { direction: rtl; font-family: 'Cairo', sans-serif; letter-spacing: 0; }
+        .rtl .nav-links { gap: 20px; }
+        .rtl .section-title::after { display: none; }
+        .rtl .section-title::before { content: ""; height: 1px; flex: 1; background: linear-gradient(270deg, var(--border), transparent); }
+        .rtl .profile-blob { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; animation: blobAnimateRTL 8s infinite alternate; }
+        @keyframes blobAnimateRTL {
+            0% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+            100% { border-radius: 50% 50% 67% 33% / 45% 73% 27% 55%; }
+        }
+        .rtl .stat-badge { text-align: center; }
+        .rtl .badge-1 { right: auto; left: 10px; }
+        .rtl .badge-2 { left: auto; right: -30px; }
+        .rtl .skill-card i { margin-right: 0; margin-left: 8px; }
+        .rtl .tag { margin-right: 0; margin-left: 5px; }
+    </style>
+</head>
+<body class="ltr">
+
+    <div id="canvas-container"></div>
+    <button class="lang-switch" onclick="toggleLang()" style="position: fixed; top: 20px; right: 20px; z-index: 2000; background: rgba(99, 102, 241, 0.8); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 0.8rem; backdrop-filter: blur(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">AR / EN</button>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">AHMED<span class="gradient">.DEV</span></div>
+            <ul class="nav-links">
+                <li><a href="#about" data-en="About" data-ar="عني">About</a></li>
+                <li><a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a></li>
+                <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+                <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h1 data-en="Crafting Nex-Gen <br><span class='gradient'>Web Experiences</span>" 
+                    data-ar="أصنع تجارب ويب <br><span class='gradient'>من الجيل القادم</span>">
+                    Crafting Nex-Gen <br><span class="gradient">Web Experiences</span>
+                </h1>
+                <p style="max-width: 580px; color: var(--text-gray); font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;" 
+                   data-en="I am Ahmed Elminshawy, a passionate Front-End Developer specializing in building scalable, high-performance web applications using React & Next.js." 
+                   data-ar="أنا أحمد المنشاوي، مطور واجهات أمامية شغوف متخصص في بناء تطبيقات ويب قابلة للتوسع وعالية الأداء باستخدام React و Next.js.">
+                   I am Ahmed Elminshawy, a passionate Front-End Developer specializing in building scalable, high-performance web applications using React & Next.js.
+                </p>
+                <a href="#contact" class="gradient" style="text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px;" data-en="Let's Talk <i class='fas fa-arrow-right'></i>" data-ar="لنبدأ النقاش <i class='fas fa-arrow-left'></i>">Let's Talk <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-img-circle"></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title" data-en="Background" data-ar="لمحة عني">Background</h2>
+            <div class="about-wrapper">
+                <div class="about-visual">
+                    <div class="profile-blob">
+                        <img src="https://portfolio-beta-gold-77.vercel.app/assets/me.jpg" alt="Ahmed Elminshawy">
+                    </div>
+                    <div class="stat-badge badge-1">
+                        <b>3+</b>
+                        <span data-en="Years Exp." data-ar="سنوات خبرة">Years Exp.</span>
+                    </div>
+                    <div class="stat-badge badge-2">
+                        <b>20+</b>
+                        <span data-en="Projects" data-ar="مشروع">Projects</span>
+                    </div>
+                    <div class="stat-badge badge-3">
+                        <b>15+</b>
+                        <span data-en="Clients" data-ar="عميل">Clients</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-weight: 600;" data-en="Engineering with Passion" data-ar="الهندسة بشغف">Engineering with Passion</h3>
+                    <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 25px; font-size: 0.95rem;" 
+                       data-en="More than just writing code, I build digital products. My focus lies in the intersection of performance, user experience, and clean maintainable architecture."
+                       data-ar="أكثر من مجرد كتابة الكود، أنا أبني منتجات رقمية. يركز اهتمامي على التداخل بين الأداء، تجربة المستخدم، والهيكلية البرمجية النظيفة والقابلة للصيانة.">
+                       More than just writing code, I build digital products. My focus lies in the intersection of performance, user experience, and clean maintainable architecture.
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="border-left: 2px solid var(--primary); padding-left: 15px;">
+                            <h5 style="color: white; font-size: 0.95rem;">Performance First</h5>
+                            <small style="color: var(--text-gray); font-size: 0.8rem;">Optimization & Speed</small>
+                        </div>
+                        <div style="border-left: 2px solid var(--secondary); padding-left: 15px;">
+                            <h5 style="color: white; font-size: 0.95rem;">Pixel Perfect</h5>
+                            <small style="color: var(--text-gray); font-size: 0.8rem;">Detail oriented UI</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title" data-en="Tech Stack" data-ar="الترسانة التقنية">Tech Stack</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3 data-en="Frontend Fundamentals" data-ar="أساسيات الواجهة"><i class="fas fa-code"></i> Frontend Fundamentals</h3>
+                    <div class="skill-list">
+                        <div class="skill-card"><i class="devicon-html5-plain"></i> <span>HTML5</span></div>
+                        <div class="skill-card"><i class="devicon-css3-plain"></i> <span>CSS3 / SASS</span></div>
+                        <div class="skill-card"><i class="devicon-javascript-plain"></i> <span>JavaScript (ES6+)</span></div>
+                        <div class="skill-card"><i class="devicon-typescript-plain"></i> <span>TypeScript</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 data-en="Frameworks & State" data-ar="إطارات العمل والحالة"><i class="fas fa-atom"></i> Frameworks & State</h3>
+                    <div class="skill-list">
+                        <div class="skill-card"><i class="devicon-react-original"></i> <span>React.js</span></div>
+                        <div class="skill-card"><i class="devicon-nextjs-original"></i> <span>Next.js 14</span></div>
+                        <div class="skill-card"><i class="devicon-redux-original"></i> <span>Redux Toolkit</span></div>
+                        <div class="skill-card"><i class="fas fa-box-open" style="color:#d6d3d1;"></i> <span>Zustand</span></div>
+                        <div class="skill-card"><i class="fas fa-search-dollar" style="color:#ff4154;"></i> <span>TanStack Query</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 data-en="UI & Styling" data-ar="الواجهة والتنسيق"><i class="fas fa-paint-brush"></i> UI & Styling</h3>
+                    <div class="skill-list">
+                        <div class="skill-card"><i class="devicon-tailwindcss-original"></i> <span>Tailwind CSS</span></div>
+                        <div class="skill-card shadcn"><i class="fas fa-bolt"></i> <span>shadcn/ui</span></div>
+                        <div class="skill-card"><i class="devicon-bootstrap-plain"></i> <span>Bootstrap</span></div>
+                        <div class="skill-card"><i class="devicon-figma-plain"></i> <span>Figma (Design)</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 data-en="Tools & Ecosystem" data-ar="الأدوات والنظام"><i class="fas fa-tools"></i> Tools & Ecosystem</h3>
+                    <div class="skill-list">
+                        <div class="skill-card"><i class="devicon-git-plain"></i> <span>Git / Github</span></div>
+                        <div class="skill-card"><i class="devicon-nodejs-plain"></i> <span>Node.js (Basic)</span></div>
+                        <div class="skill-card"><i class="fas fa-key" style="color:#6366f1;"></i> <span>NextAuth</span></div>
+                        <div class="skill-card"><i class="fas fa-sitemap" style="color:#4945ff;"></i> <span>Strapi (CMS)</span></div>
+                        <div class="skill-card"><i class="fas fa-rocket"></i> <span>Vercel / Netlify</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title" data-en="Featured Work" data-ar="أبرز الأعمال">Featured Work</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" alt="E-commerce">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div><span class="tag">Next.js 14</span><span class="tag">TypeScript</span><span class="tag">shadcn/ui</span></div>
+                        <h3 style="margin: 10px 0; font-size: 1.2rem; font-weight: 600;">NexStore Ecosystem</h3>
+                        <p style="color: var(--text-gray); font-size: 0.85rem; line-height: 1.6;">High-performance headless commerce with SSR.</p>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" alt="Dashboard">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div><span class="tag">React</span><span class="tag">Zustand</span><span class="tag">TanStack Query</span></div>
+                        <h3 style="margin: 10px 0; font-size: 1.2rem; font-weight: 600;">Quantum Dashboard</h3>
+                        <p style="color: var(--text-gray); font-size: 0.85rem; line-height: 1.6;">Real-time data visualization panel.</p>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="text-align: center; border: none; padding-bottom: 40px; padding-top: 80px;">
+            <h2 class="gradient" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 15px; font-weight: 800; letter-spacing: -2px;" data-en="Let's Build Together" data-ar="لنقم بالبناء معاً">Let's Build Together</h2>
+            <p style="color: var(--text-gray); margin-bottom: 40px;" data-en="Have a project in mind? Reach out." data-ar="لديك مشروع في بالك؟ تواصل معي.">Have a project in mind? Reach out.</p>
+            <div style="display: flex; justify-content: center; gap: 25px; font-size: 1.8rem;">
+                <a href="mailto:ahmedelminshawy981@gmail.com" style="color: var(--text-gray);"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ahmed-elminshawy-71b438268" style="color: var(--text-gray);"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-gray);"><i class="fab fa-github"></i></a>
+            </div>
+            <p style="margin-top: 80px; color: #333; font-size: 0.75rem; letter-spacing: 1px; font-weight: 300;">© 2026 AHMED ELMINSHAWY. ALL RIGHTS RESERVED.</p>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // --- NEW REFINED BACKGROUND: Neural Network ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const particlesCount = 120; // هدوء بصري
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particlesCount * 3);
+
+        for (let i = 0; i < particlesCount * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 10;
+        }
+
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+        const material = new THREE.PointsMaterial({
+            size: 0.05,
+            color: '#6366f1',
+            transparent: true,
+            opacity: 0.8
+        });
+
+        const points = new THREE.Points(geometry, material);
+        group.add(points);
+
+        // إضافة الخطوط (الشبكة العصبيّة)
+        const lineMaterial = new THREE.LineBasicMaterial({ color: '#6366f1', transparent: true, opacity: 0.1 });
+        
+        function updateLines() {
+            // مسح الخطوط القديمة لرفع الأداء
+            group.children.forEach(child => { if(child.type === 'LineSegments') group.remove(child); });
+
+            const lineGeometry = new THREE.BufferGeometry();
+            const linePositions = [];
+            const pos = points.geometry.attributes.position.array;
+
+            for (let i = 0; i < particlesCount; i++) {
+                for (let j = i + 1; j < particlesCount; j++) {
+                    const dx = pos[i*3] - pos[j*3];
+                    const dy = pos[i*3+1] - pos[j*3+1];
+                    const dz = pos[i*3+2] - pos[j*3+2];
+                    const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+                    if (dist < 1.5) { // ارسم خط فقط لو النقط قريبة
+                        linePositions.push(pos[i*3], pos[i*3+1], pos[i*3+2]);
+                        linePositions.push(pos[j*3], pos[j*3+1], pos[j*3+2]);
+                    }
+                }
+            }
+            lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+            const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+            group.add(lines);
+        }
+
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            group.rotation.y += 0.001;
+            group.rotation.x += 0.0005;
+            updateLines();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // --- Multi-Language Logic ---
+        function toggleLang() {
+            const body = document.body;
+            const isEn = body.classList.contains('ltr');
+            if (isEn) {
+                body.classList.replace('ltr', 'rtl');
+                updateContent('ar');
+            } else {
+                body.classList.replace('rtl', 'ltr');
+                updateContent('en');
+            }
+        }
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+            // Update Title
+            document.title = lang === 'ar' ? "أحمد المنشاوي | معرض الأعمال 2026" : "Ahmed Elminshawy | Portfolio 2026";
+        }
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
 </html>
