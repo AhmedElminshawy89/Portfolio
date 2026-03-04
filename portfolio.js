@@ -136,3 +136,32 @@ if (menuToggle) {
         });
     });
 }
+
+
+window.onscroll = function() {
+    updateProgress();
+};
+
+function updateProgress() {
+    // منطق شريط التقدم
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+
+    // منطق ظهور زر العودة للأعلى
+    const backBtn = document.getElementById("backToTop");
+    if (winScroll > 300) {
+        backBtn.style.display = "flex";
+    } else {
+        backBtn.style.display = "none";
+    }
+}
+
+// تنفيذ الصعود عند الضغط على الزر
+document.getElementById("backToTop").onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
