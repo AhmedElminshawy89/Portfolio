@@ -574,7 +574,7 @@
 </html> -->
 
 
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -1022,4 +1022,413 @@
         });
     </script>
 </body>
+</html> -->
+
+
+
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Elminshawy | Middle Frontend Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/me.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/portfolio.css">
+    <style>
+      .whatsapp-link i { color: #25D366; margin-right: 5px; }
+      .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+      .process-step { padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+      .step-num { font-weight: 800; color: var(--gradient-start); font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
+    </style>
+  </head>
+  <body class="ltr">
+      
+    <div id="canvas-container"></div>
+    <nav class="glass-nav">
+      <div class="container nav-content">
+        <div class="logo">AHMED ELMINSHAWY<span class="dot">.</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" data-en="Skills" data-ar="المهارات">Home</a></li>
+          <li><a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a></li>
+          <li><a href="#projects" data-en="Work" data-ar="أعمالي">Work</a></li>
+          <li><a href="#process" data-en="Process" data-ar="منهجية العمل">Process</a></li>
+          <li><a href="#about" data-en="Experience" data-ar="الخبرة">Experience</a></li>
+          <li><a href="#contact" class="nav-cta" data-en="Hire Me" data-ar="توظيف">Hire Me</a></li>
+          <!-- <li><button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button></li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero" id="home">
+        <div class="hero-container"> 
+          <div class="hero-content">
+            <div class="badge" data-en="Middle Frontend Engineer" data-ar="مهندس واجهات أمامية">Middle Frontend Engineer</div>
+            
+            <h1 class="hero-title">
+              <span data-en="Engineering Scalable" data-ar="هندسة تطبيقات">Engineering Scalable</span><br>
+              <span class="gradient-text" data-en="Digital Architectures" data-ar="أنظمة رقمية متطورة">Digital Architectures</span>
+            </h1>
+
+            <p class="hero-subtitle" 
+               data-en="Ahmed Elminshawy — Middle Frontend Engineer with 2.5+ years of experience. Specializing in high-performance React ecosystems, Next.js, and complex enterprise solutions like POS and LMS platforms." 
+               data-ar="أحمد المنشاوي — مهندس واجهات أمامية بخبرة تزيد عن سنتين ونصف. متخصص في بناء أنظمة React عالية الأداء، Next.js، والحلول البرمجية المعقدة مثل أنظمة POS ومنصات التعليم.">
+              Ahmed Elminshawy — Middle Frontend Engineer with 2.5+ years of experience. Specializing in high-performance React ecosystems, Next.js, and complex enterprise solutions like POS and LMS platforms.
+            </p>
+            
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary" data-en="View Selected Work" data-ar="عرض الأعمال">View Selected Work</a>
+              <a href="https://github.com/AhmedElminshawy89" target="_blank" class="btn-secondary">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <div class="profile-blob"> 
+              <img src="img/me.png" alt="Ahmed Elminshawy" class="profile-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="section-label">01. Expertise & Tooling</h2>
+            <div class="line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="category-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Core Frameworks</h3>
+                <div class="skill-tags-modern">
+                    <span>React.js</span><span>Next.js (App Router)</span><span>TypeScript</span><span>JavaScript (ES6+)</span><span>Node.js</span><span>Unit Testing (Jest)</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="category-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Styling & UI</h3>
+                <div class="skill-tags-modern">
+                    <span>Tailwind CSS</span><span>SASS/SCSS</span><span>Material UI</span><span>GSAP</span><span>Three.js</span><span>Framer Motion</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="category-icon"><i class="fas fa-database"></i></div>
+                <h3>State & Workflow</h3>
+                <div class="skill-tags-modern">
+                    <span>Redux Toolkit</span><span>TanStack Query</span><span>Git / GitHub</span><span>REST APIs</span><span>Zustand</span>
+                </div>
+            </div>
+        </div>
+      </section>
+
+<section id="projects" class="projects-section">
+  <div class="section-header">
+    <h2 class="section-label">02. Featured Engineering</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="projects-grid">
+<article class="project-card-modern">
+  <div class="project-preview">
+    <img src="img/mied.png" alt="MIED Platform">
+    <div class="overlay-actions">
+      <a href="https://miedeg.com/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="https://github.com/AhmedElminshawy89/devmeid" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>MIED Multi-National Platform</h3>
+    <p>
+      An enterprise-grade web architecture featuring a robust Multi-language system (i18next) and optimized global state management. 
+      Implemented advanced features like PDF generation, SEO optimization, and dynamic data visualization.
+    </p>
+    <div class="tech-stack">
+      <span><i class="fab fa-react"></i> React 18</span>
+      <span><i class="fas fa-bolt"></i> Redux Toolkit</span>
+      <span><i class="fas fa-language"></i> i18next (Multi-lang)</span>
+      <span><i class="fas fa-file-pdf"></i> jsPDF</span>
+      <span><i class="fas fa-sync"></i> Axios & REST API</span>
+      <span><i class="fab fa-sass"></i> SASS</span>
+    </div>
+  </div>
+</article>
+
+<article class="project-card-modern">
+  <div class="project-preview">
+    <img src="img/mr.png" alt="M&R Elite Store">
+    <div class="overlay-actions">
+      <a href="https://mr-elite.com/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="https://github.com/AhmedElminshawy89/e-commerceMR" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>M&R Elite E-commerce</h3>
+    <p>
+      A high-performance retail engine featuring a complex shopping cart logic, seamless category filtering, and immersive visual storytelling through advanced GSAP animations.
+    </p>
+    <div class="tech-stack">
+      <span><i class="fab fa-react"></i> React 18</span>
+      <span><i class="fas fa-magic"></i> GSAP & AOS</span>
+      <span><i class="fas fa-shopping-cart"></i> Redux Toolkit</span>
+      <span><i class="fas fa-language"></i> i18next (RTL Support)</span>
+      <span><i class="fab fa-sass"></i> SASS (Modular)</span>
+      <span><i class="fas fa-mobile-alt"></i> Adaptive UI</span>
+    </div>
+  </div>
+</article>
+
+<article class="project-card-modern">
+  <div class="project-preview">
+    <img src="img/dash.png" alt="Advanced LMS Dashboard">
+    <div class="overlay-actions">
+      <a href="#" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="https://github.com/AhmedElminshawy89" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Enterprise LMS Dashboard</h3>
+    <p>
+      A high-end educational management ecosystem built for scale. Featuring complex data visualization, interactive scheduling systems, and drag-and-drop course management.
+    </p>
+    <div class="tech-stack">
+      <span><i class="fab fa-react"></i> Next.js 16 (App Router)</span>
+      <span><i class="fas fa-code"></i> TypeScript</span>
+      <span><i class="fas fa-chart-pie"></i> ApexCharts</span>
+      <span><i class="fas fa-calendar-alt"></i> FullCalendar</span>
+      <span><i class="fas fa-hand-pointer"></i> React DND</span>
+      <span><i class="fas fa-wind"></i> Tailwind CSS 4.0</span>
+    </div>
+  </div>
+</article>
+<article class="project-card-modern">
+  <div class="project-preview">
+    <img src="img/pos.png" alt="Smart POS System">
+    <div class="overlay-actions">
+      <a href="https://pos-sysytem.vercel.app/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="https://github.com/AhmedElminshawy89/PosSysytem" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Enterprise POS & Inventory</h3>
+    <p>
+      A comprehensive retail management system featuring real-time inventory tracking, multi-format data export (Excel/PDF), and keyboard-driven efficiency for high-speed operations.
+    </p>
+    <div class="tech-stack">
+      <span><i class="fab fa-react"></i> React 18</span>
+      <span><i class="fas fa-layer-group"></i> Material UI & AntD</span>
+      <span><i class="fas fa-file-excel"></i> XLSX & CSV Export</span>
+      <span><i class="fas fa-keyboard"></i> Hotkeys Hooks</span>
+      <span><i class="fas fa-check-circle"></i> Formik & Yup</span>
+      <span><i class="fas fa-print"></i> React-to-Print</span>
+    </div>
+  </div>
+</article>
+
+<article class="project-card-modern">
+  <div class="project-preview">
+    <img src="img/gharam.jpeg" alt="Gharam Financial ERP">
+    <div class="overlay-actions">
+      <a href="https://ghram.gharamsoltan.com/login" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="https://github.com/AhmedElminshawy89/devGhramSoltan" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Gharam Financial ERP</h3>
+    <p>
+      An advanced ERP for invoice and inventory management featuring Offline-First capabilities (IndexedDB) and a high-performance data table system for large-scale financial records.
+    </p>
+    <div class="tech-stack">
+      <span><i class="fab fa-react"></i> React 18</span>
+      <span><i class="fas fa-database"></i> Dexie (Offline-First)</span>
+      <span><i class="fas fa-table"></i> MUI DataTables</span>
+      <span><i class="fas fa-bolt"></i> Redux Toolkit</span>
+      <span><i class="fas fa-align-right"></i> JSS-RTL</span>
+      <span><i class="fas fa-wind"></i> Tailwind CSS</span>
+    </div>
+  </div>
+</article>
+
+    <article class="project-card-modern">
+      <div class="project-preview">
+        <img src="img/land.png" alt="Medical Landings">
+        <div class="overlay-actions">
+          <a href="https://www.re3aty.com" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/AhmedElminshawy89" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Medical Landing Ecosystem</h3>
+        <p>Suite of 20+ landing pages optimized for maximum performance and user engagement.</p>
+        <div class="tech-stack">
+          <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+          <span><i class="fas fa-search"></i> SEO Suite</span>
+          <span><i class="fab fa-html5"></i> Semantic UI</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+      <section id="process" class="experience-section">
+        <div class="section-header">
+            <h2 class="section-label">03. The Process</h2>
+            <div class="line"></div>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <span class="step-num">01. Discovery</span>
+                <p>Understanding requirements, analyzing targets, and defining the architecture.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-num">02. Engineering</span>
+                <p>Developing with Type-safety, component modularity, and state efficiency.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-num">03. Optimization</span>
+                <p>Refining performance, SEO metrics, and ensuring cross-browser perfection.</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="about" class="experience-section">
+        <div class="section-header">
+            <h2 class="section-label">04. Professional Journey</h2>
+            <div class="line"></div>
+        </div>
+        <div class="experience-timeline">
+            <div class="timeline-item">
+                <div class="timeline-meta">
+                    <span class="company">Branmarks</span>
+                    <span class="period">June 2023 - PRESENT</span>
+                </div>
+                <div class="timeline-content">
+                    <h4 class="role">Frontend Developer</h4>
+                    <p class="exp-desc">Leading development of POS and enterprise solutions using Next.js and React.</p>
+                    <ul class="exp-bullets">
+                        <li>Architected high-performance UIs for enterprise management.</li>
+                        <li>Reduced page load times by 30% via Next.js optimization.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-meta">
+                    <span class="company">Nosoqq</span>
+                    <span class="period">Nov 2023 - Jan 2025</span>
+                </div>
+                <div class="timeline-content">
+                    <h4 class="role">Frontend Developer (Freelance)</h4>
+                    <p class="exp-desc">Delivered large-scale Projects like Moscow & Paris with focus on E-commerce.</p>
+                    <ul class="exp-bullets">
+                        <li>Implemented Type-safety using TypeScript.</li>
+                        <li>Increased mobile engagement by 60% through responsive design.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-meta">
+                    <span class="company">Innomatics</span>
+                    <span class="period">6 MONTHS (2022)</span>
+                </div>
+                <div class="timeline-content">
+                    <h4 class="role">Frontend Engineering Intern</h4>
+                    <p class="exp-desc">Intensive training on React performance and modern web standards.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-meta">
+                    <span class="company">IEEE Training</span>
+                    <span class="period">2022</span>
+                </div>
+                <div class="timeline-content">
+                    <h4 class="role">Frontend Development Intern</h4>
+                    <p class="exp-desc">Intensive training on modern web standards and team collaboration workflows.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="experience-section">
+        <div class="section-header">
+            <h2 class="section-label">05. Certifications</h2>
+            <div class="line"></div>
+        </div>
+        <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="skill-category">
+                <h4>Meta Front-End Professional</h4>
+                <p>Coursera / Meta Certificate</p>
+            </div>
+            <div class="skill-category">
+                <h4>Advanced React Patterns</h4>
+                <p>Udemy Professional Certification</p>
+            </div>
+            <div class="skill-category">
+                <h4>Google UX Design Specialization</h4>
+                <p>Google Professional Certificate</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="education" class="experience-section">
+        <div class="section-header">
+            <h2 class="section-label">06. Education</h2>
+            <div class="line"></div>
+        </div>
+        <div class="experience-timeline">
+            <div class="timeline-item">
+                <div class="timeline-meta">
+                    <span class="company">B.Sc. Computer Science</span>
+                    <span class="period">Graduated 2024</span>
+                </div>
+                <div class="timeline-content">
+                    <h4 class="role">Kafr El-Sheikh University</h4>
+                    <p class="exp-desc">Graduated with a GPA of 3.9. Focused on Software Engineering.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <h2 data-en="Let's build something together" data-ar="لنعمل معاً على مشروعك">Let's build something together</h2>
+            <a href="mailto:ahmedelminshawy981@gmail.com" class="footer-email">ahmedelminshawy981@gmail.com</a>
+            
+            <div class="footer-socials">
+                <a href="https://wa.me/201286552467" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.linkedin.com/in/ahmed-el-minshawy-705886178/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/AhmedElminshawy89" target="_blank">GitHub</a>
+            </div>
+            
+            <p class="copyright">© 2026 Ahmed Elminshawy. Built with Passion & Tech.</p>
+        </div>
+    </footer>
+
+    <div class="social-sidebar">
+  <a href="https://wa.me/201286552467" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+  <a href="https://www.linkedin.com/in/ahmed-el-minshawy-705886178/" target="_blank" class="social-icon linkedin" title="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+    <span>LinkedIn</span>
+  </a>
+  <a href="https://www.facebook.com/elminshawia/" target="_blank" class="social-icon facebook" title="Facebook">
+    <i class="fab fa-facebook-f"></i>
+    <span>Facebook</span>
+  </a>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/portfolio.js"></script>
+  </body>
 </html>
