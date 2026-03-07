@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
     <style>
       .whatsapp-link i {
         color: #25d366;
@@ -53,6 +53,10 @@
         <ul class="nav-links">
           <li><a href="#home" data-en="Skills" data-ar="المهارات">Home</a></li>
           <li>
+            <a href="#about" data-en="Experience" data-ar="الخبرة"
+              >About</a
+            >
+          </li>
             <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
           </li>
           <li><a href="#projects" data-en="Work" data-ar="أعمالي">Work</a></li>
@@ -62,7 +66,7 @@
             >
           </li>
           <li>
-            <a href="#about" data-en="Experience" data-ar="الخبرة"
+            <a href="#experience" data-en="Experience" data-ar="الخبرة"
               >Experience</a
             >
           </li>
@@ -85,7 +89,7 @@
               data-en="Middle Frontend Engineer"
               data-ar="مهندس واجهات أمامية"
             >
-              Frontend Developer
+              Middle Frontend Engineer
             </div>
 
             <h1 class="hero-title">
@@ -120,8 +124,9 @@
                 >View Selected Work</a
               >
               <a
-                href="assets/Ahmed Elminshawy – Frontend Developer.pdf"
+                href="pdf/Ahmed Elsaied Elminshawy(Front End Developer).pdf"
                 target="_blank"
+                download
                 class="btn-glass-special cv-btn"
               >
                 <i class="fas fa-file-download"></i>
@@ -147,9 +152,72 @@
         </div>
       </section>
 
+
+<section id="about" class="about-section">
+    <div class="about-grid">
+      
+      <div class="about-text-content">
+        <div class="section-header">
+          <h2 class="section-label">01. About Me</h2>
+          <div class="line"></div>
+        </div>
+        <h1 class="hero-title">Architecting <span class="gradient-text">Digital Futures</span> with Precision.</h1>
+        <p class="description">
+          Middle Frontend Engineer dedicated to building high-performance, scalable web applications. 
+          I specialize in the <strong>React ecosystem</strong>, bridging the gap between complex backend logic 
+          and seamless user experiences.
+        </p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3 class="stat-number">3+</h3>
+            <p class="stat-label">Years of Experience</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-number">3.9</h3>
+            <p class="stat-label">GPA / Excellence</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-number">50+</h3>
+            <p class="stat-label">Modules Deployed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual-container">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">about_me.json</div>
+          </div>
+          <div class="terminal-body">
+            <pre><code><span class="key">"identity"</span>: {
+  <span class="key">"name"</span>: <span class="string">"Ahmed Elminshawy"</span>,
+  <span class="key">"role"</span>: <span class="string">"Middle Frontend Engineer"</span>,
+  <span class="key">"location"</span>: <span class="string">"Egypt"</span>
+},
+<span class="key">"education"</span>: {
+  <span class="key">"degree"</span>: <span class="string">"BSc Computer Science '24"</span>,
+  <span class="key">"specialization"</span>: <span class="string">"Frontend Engineering"</span>
+},
+<span class="key">"stack"</span>: [
+  <span class="string">"React"</span>, <span class="string">"Next.js"</span>, <span class="string">"GSAP"</span>, <span class="string">"Three.js"</span>
+],
+<span class="key">"mindset"</span>: <span class="string">"Performance & Clean Code"</span></code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+
       <section id="skills" class="skills-section">
         <div class="section-header">
-          <h2 class="section-label">01. Expertise & Tooling</h2>
+          <h2 class="section-label">02. Expertise & Tooling</h2>
           <div class="line"></div>
         </div>
         <div class="skills-grid">
@@ -457,7 +525,7 @@
 
       <section id="process" class="experience-section">
         <div class="section-header">
-          <h2 class="section-label">03. The Process</h2>
+          <h2 class="section-label">04. The Process</h2>
           <div class="line"></div>
         </div>
         <div class="process-grid">
@@ -485,9 +553,9 @@
         </div>
       </section>
 
-      <section id="about" class="experience-section">
+      <section id="experience" class="experience-section">
         <div class="section-header">
-          <h2 class="section-label">04. Professional Journey</h2>
+          <h2 class="section-label">05. Professional Journey</h2>
           <div class="line"></div>
         </div>
         <div class="experience-timeline">
@@ -604,42 +672,141 @@
           </div>
         </div>
       </section>
-    </main>
-
-    <footer id="contact">
-      <div class="container footer-content">
-        <h2
-          data-en="Let's build something together"
-          data-ar="لنعمل معاً على مشروعك"
-        >
-          Let's build something together
-        </h2>
-        <a href="mailto:ahmedelminshawy981@gmail.com" class="footer-email"
-          >ahmedelminshawy981@gmail.com</a
-        >
-
-        <div class="footer-socials">
-          <a
-            href="https://wa.me/201286552467"
-            target="_blank"
-            class="whatsapp-link"
-            ><i class="fab fa-whatsapp"></i> WhatsApp</a
-          >
-          <a
-            href="https://www.linkedin.com/in/ahmed-el-minshawy-705886178/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/AhmedElminshawy89" target="_blank"
-            >GitHub</a
-          >
-        </div>
-
-        <p class="copyright">
-          © 2026 Ahmed Elminshawy. Built with Passion & Tech.
+<section class="contact-container" id="contact">
+  <div class="section-header">
+    <h2 class="section-label" data-en="07. Contact" data-ar="07. التواصل">07. Contact</h2>
+    <div class="line"></div>
+  </div>
+  
+  <div class="contact-wrapper">
+    <div class="contact-info-box">
+      <div class="contact-header">
+        <h3 data-en="Let's build something scalable." data-ar="لنقم ببناء شيء قابل للتوسع.">Let's build something scalable.</h3>
+        <p data-en="Currently open to new opportunities and architectural consulting. Feel free to reach out via the form or my social channels." 
+           data-ar="أنا متاح حالياً للفرص الجديدة والاستشارات التقنية. لا تتردد في التواصل معي عبر النموذج أو القنوات الاجتماعية.">
+          Currently open to new opportunities and architectural consulting. Feel free to reach out via the form or my social channels.
         </p>
       </div>
-    </footer>
+
+      <div class="contact-methods">
+        <div class="method-item">
+          <i class="fas fa-envelope-open-text"></i>
+          <div>
+            <span data-en="Email" data-ar="البريد الإلكتروني">Email</span>
+            <p>ahmedelminshawy981@gmail.com</p>
+          </div>
+        </div>
+        <div class="method-item">
+          <i class="fas fa-terminal"></i>
+          <div>
+            <span data-en="Digital Presence" data-ar="التواجد الرقمي">Digital Presence</span>
+            <div class="social-links-mini">
+              <a href="https://github.com/AhmedElminshawy89" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/ahmed-el-minshawy-705886178/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/201286552467" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="server-status-box">
+        <div class="status-dot pulse-green"></div>
+        <span data-en="System Status: Ready to accept new packets" data-ar="حالة النظام: جاهز لاستقبال مشاريع جديدة">System Status: Ready to accept new packets</span>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <form id="whatsappForm" class="main-form">
+        <div class="form-group">
+          <label data-en="Full Name" data-ar="الاسم بالكامل">Full Name</label>
+          <input type="text" id="userName" placeholder="e.g. John Doe" required />
+        </div>
+        <div class="form-group">
+          <label data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+          <input type="email" id="userEmail" placeholder="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label data-en="Subject" data-ar="الموضوع">Subject</label>
+          <input type="text" id="userSubject" placeholder="Frontend Project / Job Opportunity" />
+        </div>
+        <div class="form-group">
+          <label data-en="Payload (Message)" data-ar="نص الرسالة">Payload (Message)</label>
+          <textarea id="userMessage" rows="4" placeholder="Describe your project requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn-main-gradient submit-btn">
+          <span data-en="Execute Send" data-ar="تنفيذ الإرسال">Execute Send</span>
+          <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+    </main>
+
+
+      <div id="toast" class="toast">
+        <i class="fas fa-satellite-dish" style="color: var(--primary)"></i>
+        <span id="toast-msg">Establishing Connection...</span>
+      </div>
+    
+<footer class="global-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">AHMED<span> ELMINSHAWY</span>.</div>
+      <p class="footer-bio">
+        Middle Frontend Engineer specializing in building premium web experiences. 
+        Focused on high-performance interfaces, interactive 3D elements, and scalable React architectures.
+      </p>
+      <div class="footer-socials">
+        <a href="https://github.com/AhmedElminshawy89" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ahmed-el-minshawy-705886178/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/201286552467" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:ahmedelminshawy@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>System Navigation</h4>
+      <ul>
+        <li><a href="#home"><span class="nav-num">01.</span> Home</a></li>
+        <li><a href="#about"><span class="nav-num">03.</span> About</a></li>
+        <li><a href="#skills"><span class="nav-num">04.</span> Skills</a></li>
+        <li><a href="#experience"><span class="nav-num">05.</span> Experience</a></li>
+        <li><a href="#projects"><span class="nav-num">06.</span> Featured Projects</a></li>
+        <li><a href="#skills"><span class="nav-num">07.</span> Technical Stack</a></li>
+        <li><a href="#contact"><span class="nav-num">08.</span> Terminal Connection</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-status">
+      <h4>Environment Status</h4>
+      <div class="status-indicator">
+        <div class="status-line">
+          <span class="label">System:</span>
+          <span class="value green">Online / Stable</span>
+        </div>
+        <div class="status-line">
+          <span class="label">Main Stack:</span>
+          <span class="value">React 19 / Next.js 16</span>
+        </div>
+        <div class="status-line">
+          <span class="label">Base:</span>
+          <span class="value">Kafr-Elshiekh, Egypt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">
+      &copy; 2026 Ahmed Elminshawy. Designed with precision.
+    </div>
+    <div class="status-line">
+      <span class="label">Availability:</span>
+      <span class="value green">Open for Innovation</span>
+    </div>
+  </div>
+</footer>
 
     <div class="social-sidebar">
       <a
@@ -689,6 +856,6 @@
     </button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="portfolio.js"></script>
+    <script src="js/portfolio.js"></script>
   </body>
 </html>
