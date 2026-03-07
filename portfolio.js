@@ -1,167 +1,221 @@
 // 1. نظام تبديل اللغة (Language System)
 function toggleLang() {
-    const html = document.documentElement;
-    const btn = document.getElementById('langBtn');
-    // الحالة الحالية قبل التبديل
-    const currentLang = html.getAttribute('lang'); 
-    const isEn = currentLang === 'en';
-    
-    // التبديل للغة الجديدة
-    const newLang = isEn ? 'ar' : 'en';
-    const newDir = isEn ? 'rtl' : 'ltr';
+  const html = document.documentElement;
+  const btn = document.getElementById("langBtn");
+  // الحالة الحالية قبل التبديل
+  const currentLang = html.getAttribute("lang");
+  const isEn = currentLang === "en";
 
-    html.setAttribute('lang', newLang);
-    html.setAttribute('dir', newDir);
-    btn.innerText = isEn ? 'AR' : 'EN';
+  // التبديل للغة الجديدة
+  const newLang = isEn ? "ar" : "en";
+  const newDir = isEn ? "rtl" : "ltr";
 
-    // تحديث النصوص (Data Attributes)
-    const elements = document.querySelectorAll('[data-en]');
-    elements.forEach(el => {
-        const text = el.getAttribute(`data-${newLang}`);
-        if (text) el.innerHTML = text;
-    });
+  html.setAttribute("lang", newLang);
+  html.setAttribute("dir", newDir);
+  btn.innerText = isEn ? "AR" : "EN";
 
-    // تحديث الخطوط في حالة العربي
-    document.body.style.fontFamily = (newLang === 'ar') ? "'Cairo', sans-serif" : "'Inter', sans-serif";
+  // تحديث النصوص (Data Attributes)
+  const elements = document.querySelectorAll("[data-en]");
+  elements.forEach((el) => {
+    const text = el.getAttribute(`data-${newLang}`);
+    if (text) el.innerHTML = text;
+  });
+
+  // تحديث الخطوط في حالة العربي
+  document.body.style.fontFamily =
+    newLang === "ar" ? "'Cairo', sans-serif" : "'Inter', sans-serif";
 }
 
 // 2. أنيميشن الظهور (Reveal on Scroll)
 const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px" // بيبدأ الأنيميشن قبل ما العنصر يوصل تماماً
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px", // بيبدأ الأنيميشن قبل ما العنصر يوصل تماماً
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-visible');
-        }
-    });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal-visible");
+    }
+  });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .hero-content, .section-header, .skill-category').forEach(el => {
+document
+  .querySelectorAll(
+    ".project-card, .hero-content, .section-header, .skill-category"
+  )
+  .forEach((el) => {
     // يفضل تستخدم CSS Classes بدل الـ Inline Styles للأداء
-    el.classList.add('reveal-hidden');
+    el.classList.add("reveal-hidden");
     observer.observe(el);
-});
+  });
 
 // 3. تأثير Three.js المطور (Interactive Particles)
 const initThreeJS = () => {
-    const container = document.getElementById('canvas-container');
-    if (!container) return;
+  const container = document.getElementById("canvas-container");
+  if (!container) return;
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio); // دقة أعلى للشاشات القوية
+  container.appendChild(renderer.domElement);
+
+  // جزيئات أكثر نعومة
+  const geometry = new THREE.BufferGeometry();
+  const count = 3000;
+  const positions = new Float32Array(count * 3);
+
+  for (let i = 0; i < count * 3; i++) {
+    positions[i] = (Math.random() - 0.5) * 2000;
+  }
+  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+  const material = new THREE.PointsMaterial({
+    color: 0x64ffda, // لون البراند بتاعك
+    size: 2,
+    transparent: true,
+    opacity: 0.4,
+    blending: THREE.AdditiveBlending,
+  });
+
+  const particles = new THREE.Points(geometry, material);
+  scene.add(particles);
+
+  camera.position.z = 1000;
+
+  // حركة مع الماوس
+  let mouseX = 0;
+  let mouseY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX - window.innerWidth / 2;
+    mouseY = e.clientY - window.innerHeight / 2;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // دوران تلقائي خفيف
+    particles.rotation.y += 0.001;
+    particles.rotation.x += 0.0005;
+
+    // استجابة ناعمة لحركة الماوس
+    camera.position.x += (mouseX - camera.position.x) * 0.02;
+    camera.position.y += (-mouseY - camera.position.y) * 0.02;
+    camera.lookAt(scene.position);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // التعامل مع تغيير حجم النافذة
+  window.addEventListener("resize", () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio); // دقة أعلى للشاشات القوية
-    container.appendChild(renderer.domElement);
-
-    // جزيئات أكثر نعومة
-    const geometry = new THREE.BufferGeometry();
-    const count = 3000;
-    const positions = new Float32Array(count * 3);
-
-    for (let i = 0; i < count * 3; i++) {
-        positions[i] = (Math.random() - 0.5) * 2000;
-    }
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-    const material = new THREE.PointsMaterial({
-        color: 0x64ffda, // لون البراند بتاعك
-        size: 2,
-        transparent: true,
-        opacity: 0.4,
-        blending: THREE.AdditiveBlending
-    });
-
-    const particles = new THREE.Points(geometry, material);
-    scene.add(particles);
-
-    camera.position.z = 1000;
-
-    // حركة مع الماوس
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX - window.innerWidth / 2;
-        mouseY = e.clientY - window.innerHeight / 2;
-    });
-
-    function animate() {
-        requestAnimationFrame(animate);
-        
-        // دوران تلقائي خفيف
-        particles.rotation.y += 0.001;
-        particles.rotation.x += 0.0005;
-
-        // استجابة ناعمة لحركة الماوس
-        camera.position.x += (mouseX - camera.position.x) * 0.02;
-        camera.position.y += (-mouseY - camera.position.y) * 0.02;
-        camera.lookAt(scene.position);
-
-        renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // التعامل مع تغيير حجم النافذة
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+  });
 };
 
 // تشغيل الـ Three.js
 initThreeJS();
 
 // 4. نظام المنيو (Mobile Menu)
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const menuToggle = document.getElementById("mobile-menu");
+const navLinks = document.querySelector(".nav-links");
 
 if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+  });
 
-    // إغلاق المنيو عند اختيار قسم
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-        });
+  // إغلاق المنيو عند اختيار قسم
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("active");
     });
+  });
 }
 
-
-window.onscroll = function() {
-    updateProgress();
+window.onscroll = function () {
+  updateProgress();
 };
 
 function updateProgress() {
-    // منطق شريط التقدم
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
+  // منطق شريط التقدم
+  const winScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
 
-    // منطق ظهور زر العودة للأعلى
-    const backBtn = document.getElementById("backToTop");
-    if (winScroll > 300) {
-        backBtn.style.display = "flex";
-    } else {
-        backBtn.style.display = "none";
-    }
+  // منطق ظهور زر العودة للأعلى
+  const backBtn = document.getElementById("backToTop");
+  if (winScroll > 300) {
+    backBtn.style.display = "flex";
+  } else {
+    backBtn.style.display = "none";
+  }
 }
 
 // تنفيذ الصعود عند الضغط على الزر
-document.getElementById("backToTop").onclick = function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+document.getElementById("backToTop").onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 };
+
+document
+  .getElementById("whatsappForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("userName").value;
+    const email = document.getElementById("userEmail").value;
+    const subject = document.getElementById("userSubject").value;
+    const message = document.getElementById("userMessage").value;
+    const phoneNumber = "201286552467";
+    const whatsappMessage = 
+      `*PORTFOLIO CONTACT FORM*%0A` +
+      `--------------------------%0A` +
+      `*Client Name:* ${name}%0A` +
+      `*Contact Email:* ${email}%0A` +
+      `*Inquiry Subject:* ${subject}%0A%0A` +
+      `*Message Details:*%0A${message}%0A` +
+      `--------------------------%0A` +
+      `_Sent via Ahmed Elminshawy Portfolio_`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+    this.reset();
+
+    showToast("Payload Processed. Redirecting to WhatsApp...");
+
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
+    }, 1200);
+  });
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  const toastMsg = document.getElementById("toast-msg");
+
+  toastMsg.innerText = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 4000);
+}
