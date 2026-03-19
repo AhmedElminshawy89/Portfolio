@@ -1472,6 +1472,8 @@ body.rtl #backToTop {
   margin: 0;
   color: #fff;
   font-size: 1.1rem;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .social-links-mini {
