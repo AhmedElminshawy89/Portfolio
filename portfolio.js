@@ -188,7 +188,7 @@ document
     const subject = document.getElementById("userSubject").value;
     const message = document.getElementById("userMessage").value;
     const phoneNumber = "201286552467";
-    const whatsappMessage = 
+    const whatsappMessage =
       `*PORTFOLIO CONTACT FORM*%0A` +
       `--------------------------%0A` +
       `*Client Name:* ${name}%0A` +
@@ -218,4 +218,11 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove("show");
   }, 4000);
+}
+
+function switchProjTab(id, btn) {
+  document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('proj-' + id).classList.add('active');
+  btn.classList.add('active');
 }

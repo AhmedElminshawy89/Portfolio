@@ -14,31 +14,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="portfolio.css" />
-    <style>
-      .whatsapp-link i {
-        color: #25d366;
-        margin-right: 5px;
-      }
-      .process-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-      .process-step {
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .step-num {
-        font-weight: 800;
-        color: var(--gradient-start);
-        font-size: 1.2rem;
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-    </style>
   </head>
   <body class="ltr">
     <div id="canvas-container"></div>
@@ -109,7 +84,7 @@
               data-en="Ahmed Elminshawy — Middle Frontend Engineer with 2.5+ years of experience. Specializing in high-performance React ecosystems, Next.js, and complex enterprise solutions like POS and LMS platforms."
               data-ar="أحمد المنشاوي — مهندس واجهات أمامية بخبرة تزيد عن سنتين ونصف. متخصص في بناء أنظمة React عالية الأداء، Next.js، والحلول البرمجية المعقدة مثل أنظمة POS ومنصات التعليم."
             >
-              Ahmed Elminshawy — Middle Frontend Engineer with 2.5+ years of
+              Ahmed Elminshawy — Middle Frontend Engineer with 3+ years of
               experience. Specializing in high-performance React ecosystems,
               Next.js, and complex enterprise solutions like POS and LMS
               platforms.
@@ -124,7 +99,7 @@
                 >View Selected Work</a
               >
               <a
-                href="pdf/Ahmed Elsaied Elminshawy(Front End Developer).pdf"
+                href="pdf/Ahmed_Elminshawy_Frontend_Developer.pdf"
                 target="_blank"
                 download
                 class="btn-glass-special cv-btn"
@@ -170,7 +145,7 @@
         
         <div class="stats-grid">
           <div class="stat-card">
-            <h3 class="stat-number">2.5+</h3>
+            <h3 class="stat-number">3+</h3>
             <p class="stat-label">Years of Experience</p>
           </div>
           <div class="stat-card">
@@ -250,278 +225,279 @@
           </div>
         </div>
       </section>
+<section id="projects" class="projects-section">
+  <div class="section-header">
+    <h2 class="section-label">03. Selected Projects</h2>
+    <div class="line"></div>
+  </div>
 
-      <section id="projects" class="projects-section">
-        <div class="section-header">
-          <h2 class="section-label">03. Selected Projects</h2>
-          <div class="line"></div>
+  <!-- Category Tabs -->
+  <div class="proj-tabs">
+    <button class="proj-tab active" onclick="switchProjTab('web', this)">
+      <span class="ptab-icon ptab-web"><i class="fas fa-globe"></i></span>
+      Web Platforms
+      <span class="ptab-count">5</span>
+    </button>
+    <button class="proj-tab" onclick="switchProjTab('desktop', this)">
+      <span class="ptab-icon ptab-desktop"><i class="fas fa-desktop"></i></span>
+      Desktop Apps
+      <span class="ptab-count">3</span>
+    </button>
+    <button class="proj-tab" onclick="switchProjTab('landing', this)">
+      <span class="ptab-icon ptab-land"><i class="fas fa-layer-group"></i></span>
+      Landing Pages
+      <span class="ptab-count">20+</span>
+    </button>
+  </div>
+  <div id="proj-web" class="proj-panel active">
+    <div class="proj-summary-bar">
+      <div class="pscard"><span class="psnum">5</span><span class="pslbl">Platforms</span></div>
+      <div class="pscard"><span class="psnum">All</span><span class="pslbl">Live & Deployed</span></div>
+      <div class="pscard"><span class="psnum">React</span><span class="pslbl">Core Stack</span></div>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/mied.png" alt="MIED Platform" />
+          <div class="overlay-actions">
+            <a href="https://miedeg.com/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live</a>
+            <a href="https://github.com/AhmedElminshawy89/devmeid" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+          </div>
         </div>
-
-        <div class="projects-grid">
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/mied.png" alt="MIED Platform" />
-              <div class="overlay-actions">
-                <a
-                  href="https://miedeg.com/"
-                  target="_blank"
-                  class="action-btn live"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AhmedElminshawy89/devmeid"
-                  target="_blank"
-                  class="action-btn repo"
-                  ><i class="fab fa-github"></i> Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>MIED Multi-National Platform</h3>
-              <p>
-                An enterprise-grade web architecture featuring a robust
-                Multi-language system (i18next) and optimized global state
-                management. Implemented advanced features like PDF generation,
-                SEO optimization, and dynamic data visualization.
-              </p>
-              <div class="tech-stack">
-                <span><i class="fab fa-react"></i> React 18</span>
-                <span><i class="fas fa-bolt"></i> Redux Toolkit</span>
-                <span
-                  ><i class="fas fa-language"></i> i18next (Multi-lang)</span
-                >
-                <span><i class="fas fa-file-pdf"></i> jsPDF</span>
-                <span><i class="fas fa-sync"></i> Axios & REST API</span>
-                <span><i class="fab fa-sass"></i> SASS</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/moscow.PNG" alt="Mizzuu Travel Platform" />
-              <div class="overlay-actions">
-                <a
-                  href="https://matroshka-travel.com/"
-                  target="_blank"
-                  class="action-btn live"
-                >
-                  <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
-                <a
-                  href="https://github.com/AhmedElminshawy89/devmoscow"
-                  target="_blank"
-                  class="action-btn repo"
-                >
-                  <i class="fab fa-github"></i> Code
-                </a>
-              </div>
-            </div>
-
-            <div class="project-info">
-              <h3>Mizzuu Travel Booking Platform</h3>
-
-              <p>
-                A scalable travel booking platform built with React that allows
-                users to search and book hotels, flights, trains, buses, and
-                travel packages. The platform supports multilingual interfaces
-                (Arabic, English, Russian) and provides a responsive,
-                user-friendly experience with dynamic search, filtering, and
-                real-time booking interactions.
-              </p>
-
-              <div class="tech-stack">
-                <span><i class="fab fa-react"></i> React.js</span>
-                <span><i class="fas fa-code"></i> JavaScript (ES6+)</span>
-                <span><i class="fas fa-globe"></i> Multi-language (i18n)</span>
-                <span><i class="fas fa-plane"></i> Travel Booking APIs</span>
-                <span><i class="fas fa-mobile-alt"></i> Responsive Design</span>
-                <span><i class="fas fa-wind"></i> Tailwind / CSS</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/mr.png" alt="M&R Elite Store" />
-              <div class="overlay-actions">
-                <a
-                  href="https://mr-elite.com/"
-                  target="_blank"
-                  class="action-btn live"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AhmedElminshawy89/e-commerceMR"
-                  target="_blank"
-                  class="action-btn repo"
-                  ><i class="fab fa-github"></i> Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>M&R Elite E-commerce</h3>
-              <p>
-                A high-performance retail engine featuring a complex shopping
-                cart logic, seamless category filtering, and immersive visual
-                storytelling through advanced GSAP animations.
-              </p>
-              <div class="tech-stack">
-                <span><i class="fab fa-react"></i> React 18</span>
-                <span><i class="fas fa-magic"></i> GSAP & AOS</span>
-                <span><i class="fas fa-shopping-cart"></i> Redux Toolkit</span>
-                <span
-                  ><i class="fas fa-language"></i> i18next (RTL Support)</span
-                >
-                <span><i class="fab fa-sass"></i> SASS (Modular)</span>
-                <span><i class="fas fa-mobile-alt"></i> Adaptive UI</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/gharam.jpeg" alt="Gharam Financial ERP" />
-              <div class="overlay-actions">
-                <a
-                  href="https://ghram.gharamsoltan.com/login"
-                  target="_blank"
-                  class="action-btn live"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AhmedElminshawy89/devGhramSoltan"
-                  target="_blank"
-                  class="action-btn repo"
-                  ><i class="fab fa-github"></i> Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Gharam Financial ERP</h3>
-              <p>
-                An advanced ERP for invoice and inventory management featuring
-                Offline-First capabilities (IndexedDB) and a high-performance
-                data table system for large-scale financial records.
-              </p>
-              <div class="tech-stack">
-                <span><i class="fab fa-react"></i> React 18</span>
-                <span
-                  ><i class="fas fa-database"></i> Dexie (Offline-First)</span
-                >
-                <span><i class="fas fa-table"></i> MUI DataTables</span>
-                <span><i class="fas fa-bolt"></i> Redux Toolkit</span>
-                <span><i class="fas fa-align-right"></i> JSS-RTL</span>
-                <span><i class="fas fa-wind"></i> Tailwind CSS</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/dash.png" alt="Advanced LMS Dashboard" />
-              <div class="overlay-actions">
-                <a href="#" target="_blank" class="action-btn live"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AhmedElminshawy89"
-                  target="_blank"
-                  class="action-btn repo"
-                  ><i class="fab fa-github"></i> Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Enterprise LMS Dashboard</h3>
-              <p>
-                A high-end educational management ecosystem built for scale.
-                Featuring complex data visualization, interactive scheduling
-                systems, and drag-and-drop course management.
-              </p>
-              <div class="tech-stack">
-                <span
-                  ><i class="fab fa-react"></i> Next.js 16 (App Router)</span
-                >
-                <span><i class="fas fa-code"></i> TypeScript</span>
-                <span><i class="fas fa-chart-pie"></i> ApexCharts</span>
-                <span><i class="fas fa-calendar-alt"></i> FullCalendar</span>
-                <span><i class="fas fa-hand-pointer"></i> React DND</span>
-                <span><i class="fas fa-wind"></i> Tailwind CSS 4.0</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/pos.png" alt="Smart POS System" />
-              <div class="overlay-actions">
-                <a
-                  href="https://pos-sysytem.vercel.app/"
-                  target="_blank"
-                  class="action-btn live"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AhmedElminshawy89/PosSysytem"
-                  target="_blank"
-                  class="action-btn repo"
-                  ><i class="fab fa-github"></i> Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Enterprise POS & Inventory</h3>
-              <p>
-                A comprehensive retail management system featuring real-time
-                inventory tracking, multi-format data export (Excel/PDF), and
-                keyboard-driven efficiency for high-speed operations.
-              </p>
-              <div class="tech-stack">
-                <span><i class="fab fa-react"></i> React 18</span>
-                <span
-                  ><i class="fas fa-layer-group"></i> Material UI & AntD</span
-                >
-                <span><i class="fas fa-file-excel"></i> XLSX & CSV Export</span>
-                <span><i class="fas fa-keyboard"></i> Hotkeys Hooks</span>
-                <span><i class="fas fa-check-circle"></i> Formik & Yup</span>
-                <span><i class="fas fa-print"></i> React-to-Print</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card-modern">
-            <div class="project-preview">
-              <img src="img/land.png" alt="Medical Landings" />
-              <div class="overlay-actions">
-                <a
-                  href="https://www.re3aty.com"
-                  target="_blank"
-                  class="action-btn live"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a
-                  href="https://github.com/AhmedElminshawy89"
-                  target="_blank"
-                  class="action-btn repo"
-                  ><i class="fab fa-github"></i> Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Medical Landing Ecosystem</h3>
-              <p>
-                Suite of 20+ landing pages optimized for maximum performance and
-                user engagement.
-              </p>
-              <div class="tech-stack">
-                <span><i class="fas fa-mobile-alt"></i> Responsive</span>
-                <span><i class="fas fa-search"></i> SEO Suite</span>
-                <span><i class="fab fa-html5"></i> Semantic UI</span>
-              </div>
-            </div>
-          </article>
+        <div class="project-info">
+          <span class="proj-badge badge-blue"><i class="fas fa-circle"></i> Live</span>
+          <h3>MIED Multi-National Platform</h3>
+          <p>Enterprise platform with multi-language system, PDF generation, SEO, and dynamic data visualization.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React 18</span>
+            <span><i class="fas fa-bolt"></i> Redux</span>
+            <span><i class="fas fa-language"></i> i18next</span>
+            <span><i class="fas fa-file-pdf"></i> jsPDF</span>
+          </div>
         </div>
-      </section>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/moscow.PNG" alt="Mizzuu Travel" />
+          <div class="overlay-actions">
+            <a href="https://matroshka-travel.com/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live</a>
+            <a href="https://github.com/AhmedElminshawy89/devmoscow" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-blue"><i class="fas fa-circle"></i> Live</span>
+          <h3>Mizzuu Travel Booking</h3>
+          <p>Scalable travel booking — hotels, flights, trains. Multilingual: AR / EN / RU.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React.js</span>
+            <span><i class="fas fa-globe"></i> Multi-lang</span>
+            <span><i class="fas fa-wind"></i> Tailwind</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/mr.png" alt="M&R Elite" />
+          <div class="overlay-actions">
+            <a href="https://mr-elite.com/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live</a>
+            <a href="https://github.com/AhmedElminshawy89/e-commerceMR" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-blue"><i class="fas fa-circle"></i> Live</span>
+          <h3>M&R Elite E-commerce</h3>
+          <p>High-performance retail engine — GSAP animations and full RTL support.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React 18</span>
+            <span><i class="fas fa-magic"></i> GSAP</span>
+            <span><i class="fas fa-shopping-cart"></i> Redux</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/gharam.jpeg" alt="Gharam ERP" />
+          <div class="overlay-actions">
+            <a href="https://ghram.gharamsoltan.com/login" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live</a>
+            <a href="https://github.com/AhmedElminshawy89/devGhramSoltan" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-blue"><i class="fas fa-circle"></i> Live</span>
+          <h3>Gharam Financial ERP</h3>
+          <p>Advanced ERP with Offline-First (IndexedDB) for large-scale financial records.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React 18</span>
+            <span><i class="fas fa-database"></i> Dexie</span>
+            <span><i class="fas fa-table"></i> MUI DataTables</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/dash.png" alt="LMS Dashboard" />
+          <div class="overlay-actions">
+            <a href="https://github.com/AhmedElminshawy89" target="_blank" class="action-btn repo"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-blue"><i class="fas fa-circle"></i> Live</span>
+          <h3>Enterprise LMS Dashboard</h3>
+          <p>Educational ecosystem — data visualization, scheduling, drag-and-drop course management.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> Next.js 16</span>
+            <span><i class="fas fa-code"></i> TypeScript</span>
+            <span><i class="fas fa-hand-pointer"></i> React DND</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <!-- ===== DESKTOP PANEL ===== -->
+  <div id="proj-desktop" class="proj-panel ">
+    <div class="proj-summary-bar">
+      <div class="pscard"><span class="psnum">3</span><span class="pslbl">Desktop apps</span></div>
+      <div class="pscard"><span class="psnum">100%</span><span class="pslbl">Offline-First</span></div>
+      <div class="pscard"><span class="psnum">Tauri v2</span><span class="pslbl">Runtime</span></div>
+      <div class="pscard"><span class="psnum">SQLite</span><span class="pslbl">Local DB</span></div>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card-modern">
+        <div class="project-preview desktop-preview">
+          <div class="desktop-mockup">
+            <i class="fas fa-store"></i>
+            <span>store-manager.exe</span>
+          </div>
+          <div class="overlay-actions">
+            <span class="action-btn live"><i class="fas fa-lock"></i> Private Client</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-amber"><i class="fas fa-bolt"></i> Offline-First</span>
+          <h3>Store Management System</h3>
+          <p>تطبيق desktop متكامل لإدارة المحلات: مبيعات، مخزون، فواتير، وتقارير يومية — بدون إنترنت تماماً.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React 18</span>
+            <span><i class="fas fa-cube"></i> Tauri v2</span>
+            <span><i class="fas fa-database"></i> SQLite</span>
+            <span><i class="fas fa-bolt"></i> Redux Toolkit</span>
+            <span><i class="fas fa-wind"></i> Tailwind</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview desktop-preview playstation-prev">
+          <div class="desktop-mockup">
+            <i class="fas fa-gamepad"></i>
+            <span>ps-center.exe</span>
+          </div>
+          <div class="overlay-actions">
+            <span class="action-btn live"><i class="fas fa-lock"></i> Private Client</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-amber"><i class="fas fa-bolt"></i> Offline-First</span>
+          <h3>PlayStation Center Manager</h3>
+          <p>نظام سيبر وبلايستيشن: جلسات بالساعة، متابعة أجهزة PS، إدارة عملاء، وتقارير إيرادات يومية وشهرية.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React 18</span>
+            <span><i class="fas fa-cube"></i> Tauri v2</span>
+            <span><i class="fas fa-database"></i> SQLite</span>
+            <span><i class="fas fa-chart-pie"></i> Recharts</span>
+            <span><i class="fas fa-layer-group"></i> MUI</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview desktop-preview restaurant-prev">
+          <div class="desktop-mockup">
+            <i class="fas fa-utensils"></i>
+            <span>restaurant-pos.exe</span>
+          </div>
+          <div class="overlay-actions">
+            <span class="action-btn live"><i class="fas fa-lock"></i> Private Client</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-amber"><i class="fas fa-bolt"></i> Offline-First</span>
+          <h3>Restaurant POS System</h3>
+          <p>نظام مطعم شامل: قوائم، طلبات، طاولات، أوردرات للمطبخ، وطباعة فواتير — يشتغل بدون نت.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React 18</span>
+            <span><i class="fas fa-cube"></i> Tauri v2</span>
+            <span><i class="fas fa-database"></i> SQLite</span>
+            <span><i class="fas fa-check-circle"></i> Formik</span>
+            <span><i class="fas fa-print"></i> React-to-Print</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ===== LANDING PANEL ===== -->
+  <div id="proj-landing" class="proj-panel">
+    <div class="proj-summary-bar">
+      <div class="pscard"><span class="psnum">20+</span><span class="pslbl">Pages delivered</span></div>
+      <div class="pscard"><span class="psnum">Multi</span><span class="pslbl">Niches</span></div>
+      <div class="pscard"><span class="psnum">SEO</span><span class="pslbl">Optimized</span></div>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/land.png" alt="Medical Landings" />
+          <div class="overlay-actions">
+            <a href="https://www.re3aty.com" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-green"><i class="fas fa-layer-group"></i> 20+ Pages</span>
+          <h3>Medical & Healthcare Landings</h3>
+          <p>لاندينج بيجز لعيادات وخدمات طبية — SEO محسّن، سرعة عالية، ومتجاوبة على كل الشاشات.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fas fa-search"></i> SEO Suite</span>
+            <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+            <span><i class="fas fa-tachometer-alt"></i> Performance</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card-modern">
+        <div class="project-preview">
+          <img src="img/shama.png" alt="Business Landings" />
+          <div class="overlay-actions">
+            <a href="https://drahmedshama.com/" target="_blank" class="action-btn live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="proj-badge badge-green"><i class="fas fa-layer-group"></i> Multi-Niche</span>
+          <h3>Dr.Ahmed Shama</h3>
+<p>Landing page لعيادة طبية — SEO محسّن، تحميل سريع، ومتجاوبة بالكامل لتحقيق أعلى Conversion Rate ممكن.</p><div class="tech-stack">
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fas fa-search"></i> SEO Suite</span>
+            <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+            <span><i class="fas fa-tachometer-alt"></i> Performance</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ===== WEB PANEL ===== -->
+
+</section>
 
       <section id="process" class="experience-section">
         <div class="section-header">
